@@ -1,10 +1,39 @@
 public class Personagem{
-  String nome;
+  private String nome;
   //valor para int: 0
   //desde que a variável seja de instância
-  int energia = 10;
-  int fome = 0;
-  int sono = 0;
+  private int energia = 10;
+  private int fome = 0;
+  private int sono = 0;
+
+  //__init__(self, nome):
+  Personagem (String nome, int sono){
+    this.nome = nome;
+    this.sono = sono >= 0 && sono <= 10 ? sono : 0;
+  }
+
+  public int getEnergia() {
+    return energia;
+  }
+
+  public String getNome() {
+    return nome;
+  }
+
+  public int getFome() {
+    return fome;
+  }
+
+  public int getSono() {
+    return sono;
+  }
+
+  Personagem (){}
+
+  public void setSono(int sono) {
+    if (sono >= 0 && sono <= 10) 
+      this.sono = sono;
+  }
 
   void cacar (){
     if (energia >= 2){
